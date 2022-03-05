@@ -18,7 +18,6 @@ namespace starlink_cycle.Casting
         /// </summary>
         public Snake()
         {
-            PrepareBody();
         }
 
         /// <summary>
@@ -96,26 +95,20 @@ namespace starlink_cycle.Casting
             segments[0].SetVelocity(direction);
         }
 
-        /// <summary>
-        /// Prepares the snake body for moving.
-        /// </summary>
-        private void PrepareBody()
+        public void SnakePosition(int x, int y, Color color)
         {
-            int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
-
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {
-                Point position = new Point(x - i * Constants.CELL_SIZE, y);
-                Point velocity = new Point(1 * Constants.CELL_SIZE, 0);
+                Point position = new Point(x, y + i * Constants.CELL_SIZE);
+                Point velocity = new Point(0, 1 * Constants.CELL_SIZE);
                 string text = i == 0 ? "8" : "#";
-                Color color = i == 0 ? Constants.YELLOW : Constants.GREEN;
+                Color SnakeColor = i == 0 ? Constants.YELLOW : color;
 
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
                 segment.SetText(text);
-                segment.SetColor(color);
+                segment.SetColor(SnakeColor);
                 segments.Add(segment);
             }
         }

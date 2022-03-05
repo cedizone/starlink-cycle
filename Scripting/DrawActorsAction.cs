@@ -23,16 +23,24 @@ namespace starlink_cycle.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            List<Actor> segments = snake.GetSegments();
-            Actor score = cast.GetFirstActor("score");
-            Actor food = cast.GetFirstActor("food");
+            Snake snakeOne = (Snake)cast.GetFirstActor("snakeOne");
+            Snake snakeTwo = (Snake)cast.GetFirstActor("snakeTwo");
+
+            List<Actor> snakeOneSegments = snakeOne.GetSegments();
+            List<Actor> snakeTwoSegments = snakeTwo.GetSegments();
+
+            Actor snakeOneScore = cast.GetFirstActor("snakeOneScore");
+            Actor snakeTwoScore = cast.GetFirstActor("snakeTwoScore");
+
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
-            videoService.DrawActors(segments);
-            videoService.DrawActor(score);
-            videoService.DrawActor(food);
+            videoService.DrawActors(snakeOneSegments);
+            videoService.DrawActors(snakeTwoSegments);
+
+            videoService.DrawActor(snakeOneScore);
+            videoService.DrawActor(snakeTwoScore);
+
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }

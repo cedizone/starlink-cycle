@@ -17,6 +17,7 @@ namespace starlink_cycle.Scripting
     public class HandleCollisionsAction : Actions
     {
         private bool isGameOver = false;
+        private string winner = "";
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -30,29 +31,34 @@ namespace starlink_cycle.Scripting
         {
             if (isGameOver == false)
             {
-                HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
+                HandleScoreUpdates(cast);
                 HandleGameOver(cast);
             }
+        }
+
+        private string GetWinner()
+        {
+            return winner;
         }
 
         /// <summary>
         /// Updates the score nd moves the food if the snake collides with it.
         /// </summary>
         /// <param name="cast">The cast of actors.</param>
-        private void HandleFoodCollisions(Cast cast)
+        private void HandleScoreUpdates(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Score score = (Score)cast.GetFirstActor("score");
-            Food food = (Food)cast.GetFirstActor("food");
-            
-            if (snake.GetHead().GetPosition().Equals(food.GetPosition()))
-            {
-                int points = food.GetPoints();
-                snake.GrowTail(points);
-                score.AddPoints(points);
-                food.Reset();
-            }
+            Snake snakeOne = (Snake)cast.GetFirstActor("snakeOne");
+            Snake snakeTwo = (Snake)cast.GetFirstActor("snakeTwo");
+            Score snakeOneScore = (Score)cast.GetFirstActor("snakeOneScore");
+            Score snakeTwoScore = (Score)cast.GetFirstActor("snakeTwoScore");
+   
+            int points = 1;
+            snakeOne.GrowTail(points);
+            snakeTwo.GrowTail(points);
+
+            snakeOneScore.AddPoints(points);
+            snakeTwoScore.AddPoints(points);
         }
 
         /// <summary>
@@ -61,14 +67,30 @@ namespace starlink_cycle.Scripting
         /// <param name="cast">The cast of actors.</param>
         private void HandleSegmentCollisions(Cast cast)
         {
-            Snake snake = (Snake)cast.GetFirstActor("snake");
-            Actor head = snake.GetHead();
-            List<Actor> body = snake.GetBody();
+            Snake snakeOne = (Snake)cast.GetFirstActor("snakeOne");
+            Snake snakeTwo = (Snake)cast.GetFirstActor("snakeTwo");
 
-            foreach (Actor segment in body)
+            Actor snakeOneHead = snakeOne.GetHead();
+            Actor snakeTwoHead = snakeTwo.GetHead();
+
+
+            List<Actor> snakeOneBody = snakeOne.GetBody();
+            List<Actor> snakeTwoBody = snakeTwo.GetBody();
+
+            foreach (Actor segment in snakeOneBody)
             {
-                if (segment.GetPosition().Equals(head.GetPosition()))
+                if (segment.GetPosition().Equals(snakeTwoHead.GetPosition()))
                 {
+                    this.winner = "SnakeOne";
+                    isGameOver = true;
+                }
+            }
+
+            foreach (Actor segment in snakeTwoBody)
+            {
+                if (segment.GetPosition().Equals(snakeOneHead.GetPosition()))
+                {
+                    this.winner = "SnakeTwo";
                     isGameOver = true;
                 }
             }
@@ -78,26 +100,37 @@ namespace starlink_cycle.Scripting
         {
             if (isGameOver == true)
             {
-                Snake snake = (Snake)cast.GetFirstActor("snake");
-                List<Actor> segments = snake.GetSegments();
-                Food food = (Food)cast.GetFirstActor("food");
+                Snake snakeOne = (Snake)cast.GetFirstActor("snakeOne");
+                Snake snakeTwo = (Snake)cast.GetFirstActor("snakeTwo");
+
+                List<Actor> snakeOneSegments = snakeOne.GetSegments();
+                List<Actor> snakeTwoSegments = snakeTwo.GetSegments();
 
                 // create a "game over" message
                 int x = Constants.MAX_X / 2;
                 int y = Constants.MAX_Y / 2;
                 Point position = new Point(x, y);
+                string winner = this.GetWinner();
 
                 Actor message = new Actor();
-                message.SetText("Game Over!");
+                message.SetText($"Game Over!\n{winner} Won!");
+                message.SetColor(Constants.RED);
+                message.SetFontSize(20);
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
 
                 // make everything white
-                foreach (Actor segment in segments)
+                // SnakeOne
+                foreach (Actor segment in snakeOneSegments)
                 {
                     segment.SetColor(Constants.WHITE);
                 }
-                food.SetColor(Constants.WHITE);
+
+                // SnakeTwo
+                foreach (Actor segment in snakeTwoSegments)
+                {
+                    segment.SetColor(Constants.WHITE);
+                }
             }
         }
 

@@ -18,10 +18,17 @@ namespace starlink_cycle
         static void Main(string[] args)
         {
             // create the cast
+            Snake snakeOne = new Snake();
+            snakeOne.SnakePosition(Constants.MAX_X/7, Constants.MAX_Y/3, Constants.RED);
+
+            Snake snakeTwo = new Snake();
+            snakeTwo.SnakePosition(Constants.MAX_X-115, Constants.MAX_Y/3, Constants.GREEN);
+
             Cast cast = new Cast();
-            cast.AddActor("food", new Food());
-            cast.AddActor("snake", new Snake());
-            cast.AddActor("score", new Score());
+            cast.AddActor("snakeOne", snakeOne);
+            cast.AddActor("snakeTwo", snakeTwo);
+            cast.AddActor("snakeOneScore", new Score());
+            cast.AddActor("snakeTwoScore", new Score());
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();
