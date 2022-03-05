@@ -61,7 +61,7 @@ namespace starlink_cycle.Scripting
         /// </summary>
         /// <param name="group">The group name.</param>
         /// <param name="action">The action to remove.</param>
-        public void RemoveActor(string group, Actions action)
+        public void RemoveAction(string group, Actions action)
         {
             if (actions.ContainsKey(group))
             {
