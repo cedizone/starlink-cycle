@@ -12,7 +12,7 @@ namespace starlink_cycle.Scripting
     public class ControlActorsAction : Actions
     {
         private KeyboardService keyboardService;
-        private Point direction = new Point(Constants.CELL_SIZE, 0);
+        private Point direction = new Point(0, Constants.CELL_SIZE);
 
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
