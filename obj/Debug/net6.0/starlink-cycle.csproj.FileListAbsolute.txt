@@ -19,3 +19,24 @@ C:\Users\nwoko\OneDrive - BYU-Idaho\Winter 2022\Software Lab\CSE 210 Programming
 C:\Users\nwoko\OneDrive - BYU-Idaho\Winter 2022\Software Lab\CSE 210 Programming with Classes\starlink-cycle\obj\Debug\net6.0\ref\starlink-cycle.dll
 C:\Users\nwoko\OneDrive - BYU-Idaho\Winter 2022\Software Lab\CSE 210 Programming with Classes\starlink-cycle\obj\Debug\net6.0\starlink-cycle.pdb
 C:\Users\nwoko\OneDrive - BYU-Idaho\Winter 2022\Software Lab\CSE 210 Programming with Classes\starlink-cycle\obj\Debug\net6.0\starlink-cycle.genruntimeconfig.cache
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\starlink-cycle.exe
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\starlink-cycle.deps.json
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\starlink-cycle.runtimeconfig.json
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\starlink-cycle.dll
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\ref\starlink-cycle.dll
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\starlink-cycle.pdb
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\Raylib-cs.dll
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\runtimes\linux-x64\native\libraylib.so
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\runtimes\osx-x64\native\libraylib.dylib
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\runtimes\win-x64\native\raylib.dll
+C:\git\CSE210 Team\starlink-cycle\bin\Debug\net6.0\runtimes\win-x86\native\raylib.dll
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.csproj.AssemblyReference.cache
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.GeneratedMSBuildEditorConfig.editorconfig
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.AssemblyInfoInputs.cache
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.AssemblyInfo.cs
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.csproj.CoreCompileInputs.cache
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.csproj.CopyComplete
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.dll
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\ref\starlink-cycle.dll
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.pdb
+C:\git\CSE210 Team\starlink-cycle\obj\Debug\net6.0\starlink-cycle.genruntimeconfig.cache
