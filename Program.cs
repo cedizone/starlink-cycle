@@ -17,18 +17,22 @@ namespace starlink_cycle
         /// <param name="args">The given arguments.</param>
         static void Main(string[] args)
         {
-            // create the cast
+            // create the actors
             Snake snakeOne = new Snake();
-            snakeOne.SnakePosition(Constants.MAX_X/7, Constants.MAX_Y/3, Constants.RED);
-
             Snake snakeTwo = new Snake();
-            snakeTwo.SnakePosition(Constants.MAX_X-115, Constants.MAX_Y/3, Constants.GREEN);
+            Score snakeOneScore = new Score();
+            Score snakeTwoScore = new Score();
+
+
+            snakeOne.PrepareBody(new Point(150, 300), Constants.GREEN);
+            snakeTwo.PrepareBody(new Point(750, 300), Constants.RED);
+            snakeTwoScore.SetPosition(new Point(780, 0));
 
             Cast cast = new Cast();
             cast.AddActor("snakeOne", snakeOne);
             cast.AddActor("snakeTwo", snakeTwo);
-            cast.AddActor("snakeOneScore", new Score());
-            cast.AddActor("snakeTwoScore", new Score());
+            cast.AddActor("snakeOneScore", snakeOneScore);
+            cast.AddActor("snakeTwoScore", snakeTwoScore);
 
             // create the services
             KeyboardService keyboardService = new KeyboardService();

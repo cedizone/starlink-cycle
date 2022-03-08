@@ -6,3 +6,5 @@ Classes and methods
 ControlActorsAction.cs
     -- direction
 
+VideoService.ClearBuffer()
+    -- Changed the background to gray
