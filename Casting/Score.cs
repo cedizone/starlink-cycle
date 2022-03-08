@@ -14,23 +14,24 @@ namespace starlink_cycle.Casting
     public class Score : Actor
     {
         private int points = 0;
+        
 
         /// <summary>
         /// Constructs a new instance of an Food.
         /// </summary>
         public Score()
         {
-            AddPoints(0);
+            AddPoints("Snake", 0);
         }
 
         /// <summary>
         /// Adds the given points to the score.
         /// </summary>
         /// <param name="points">The points to add.</param>
-        public void AddPoints(int points)
+        public void AddPoints(string name, int points)
         {
             this.points += points;
-            SetText($"Score: {this.points}");
+            SetText($"{name}: {this.points}");
         }
     }
 }

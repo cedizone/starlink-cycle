@@ -79,6 +79,8 @@ namespace starlink_cycle.Casting
         /// </summary>
         public virtual void MoveNext()
         {
+            int newVx = velocity.GetX();
+            int newVy = velocity.GetY();
             int x = ((position.GetX() + velocity.GetX()) + Constants.MAX_X) % Constants.MAX_X;
             int y = ((position.GetY() + velocity.GetY()) + Constants.MAX_Y) % Constants.MAX_Y;
             position = new Point(x, y);
