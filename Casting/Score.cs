@@ -21,7 +21,7 @@ namespace starlink_cycle.Casting
         /// </summary>
         public Score()
         {
-            AddPoints("Snake", 0);
+            // AddPoints(this.name, 0);
         }
 
         /// <summary>

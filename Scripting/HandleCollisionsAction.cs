@@ -57,8 +57,8 @@ namespace starlink_cycle.Scripting
             snakeOne.GrowTail(points);
             snakeTwo.GrowTail(points);
 
-            // snakeOneScore.AddPoints("SnakeOne", points);
-            // snakeTwoScore.AddPoints("SnakeTwo", points);
+            snakeOneScore.AddPoints("SnakeOne", 0);
+            snakeTwoScore.AddPoints("SnakeTwo", 0);
         }
 
         /// <summary>

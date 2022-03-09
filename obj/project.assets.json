@@ -116,24 +116,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Meben\\.nuget\\packages\\": {}
+    "C:\\Users\\nwoko\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\CSE210 Team\\starlink-cycle\\starlink-cycle.csproj",
+      "projectUniqueName": "C:\\Users\\nwoko\\OneDrive - BYU-Idaho\\Winter 2022\\Software Lab\\CSE 210 Programming with Classes\\starlink-cycle\\starlink-cycle.csproj",
       "projectName": "starlink-cycle",
-      "projectPath": "C:\\git\\CSE210 Team\\starlink-cycle\\starlink-cycle.csproj",
-      "packagesPath": "C:\\Users\\Meben\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\CSE210 Team\\starlink-cycle\\obj\\",
+      "projectPath": "C:\\Users\\nwoko\\OneDrive - BYU-Idaho\\Winter 2022\\Software Lab\\CSE 210 Programming with Classes\\starlink-cycle\\starlink-cycle.csproj",
+      "packagesPath": "C:\\Users\\nwoko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nwoko\\OneDrive - BYU-Idaho\\Winter 2022\\Software Lab\\CSE 210 Programming with Classes\\starlink-cycle\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Meben\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nwoko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
