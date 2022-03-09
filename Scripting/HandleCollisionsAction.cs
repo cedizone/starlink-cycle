@@ -98,7 +98,7 @@ namespace starlink_cycle.Scripting
 
         private void HandleGameOver(Cast cast)
         {
-            if (isGameOver == true)
+            if (isGameOver)
             {
                 Snake snakeOne = (Snake)cast.GetFirstActor("snakeOne");
                 Snake snakeTwo = (Snake)cast.GetFirstActor("snakeTwo");
@@ -113,11 +113,19 @@ namespace starlink_cycle.Scripting
                 string winner = this.GetWinner();
 
                 Actor message = new Actor();
-                message.SetText($"Game Over!\n{winner} Won!");
+                message.SetText($"Game Over!");
                 message.SetColor(Constants.RED);
                 message.SetFontSize(20);
                 message.SetPosition(position);
                 cast.AddActor("messages", message);
+                
+                Actor message2 = new Actor();
+                message2.SetText($"{winner} Won!");
+                message2.SetColor(Constants.GREEN);
+                message2.SetFontSize(Constants.FONT_SIZE);
+                message2.SetPosition(new Point(x, y+25));
+                cast.AddActor("messages", message2);
+
 
                 // make everything white
                 // SnakeOne
