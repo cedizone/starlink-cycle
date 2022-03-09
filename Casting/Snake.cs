@@ -18,7 +18,6 @@ namespace starlink_cycle.Casting
         /// </summary>
         public Snake()
         {
-            // PrepareBody();
         }
 
         /// <summary>
@@ -64,7 +63,7 @@ namespace starlink_cycle.Casting
                 Actor segment = new Actor();
                 segment.SetPosition(position);
                 segment.SetVelocity(velocity);
-                segment.SetText("#");
+                segment.SetText("O");
                 segment.SetColor(tail.GetColor());
                 segments.Add(segment);
             }
@@ -107,7 +106,7 @@ namespace starlink_cycle.Casting
             {
                 Point position = new Point(x, y - i * Constants.CELL_SIZE);
                 Point velocity = new Point(0, 1 * Constants.CELL_SIZE);
-                string text = i == 0 ? "8" : "#";
+                string text = i == 0 ? "@" : "O";
                 Color c = i == 0 ? Constants.YELLOW : color;
 
                 Actor segment = new Actor();
