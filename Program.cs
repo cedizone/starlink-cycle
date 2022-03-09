@@ -27,6 +27,8 @@ namespace starlink_cycle
             snakeOne.PrepareBody(new Point(150, 300), Constants.GREEN);
             snakeTwo.PrepareBody(new Point(750, 300), Constants.RED);
             snakeTwoScore.SetPosition(new Point(780, 0));
+            // snakeOneScore.SetName("SnakeOne");
+            // snakeTwoScore.SetName("SnakeTwo");
 
             Cast cast = new Cast();
             cast.AddActor("snakeOne", snakeOne);
